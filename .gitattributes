@@ -1,0 +1,7 @@
+# Жол аяқталуын бірізді ұстау (Windows ↔ Linux/macOS)
+* text=auto
+*.sh text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.apk binary

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="kk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="theme-color" content="#0b3d2c" />
+    <meta
+      name="description"
+      content="GreenRoute — жаяу жүру, велосипед және қоғамдық көлік бағыттарын уақыт пен шартты экологиялық әсер бойынша салыстырады."
+    />
+    <title>GreenRoute</title>
+    <script>
+      // Тақырыпты React-тен бұрын қоямыз — бет жыпылықтамауы үшін
+      ;(function () {
+        try {
+          var p = new URLSearchParams(location.search).get('theme')
+          var saved = localStorage.getItem('gr-theme')
+          var system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+          document.documentElement.dataset.theme = p || saved || system
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light'
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
